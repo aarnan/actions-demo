@@ -4,5 +4,8 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Git
+        run: |
+          git config --global user.name "Your Full Name"
       - name: my-step
-        run: echo "Hello World :):) !"
+        run: echo "Hello ${{ github.actor }}! :):) !"
