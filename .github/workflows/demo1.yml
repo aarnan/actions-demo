@@ -4,7 +4,11 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: my-step
         run: echo "Hello ${{ github.actor }}! :):) !"
+
       - name: Full Name Greeting
-        run: echo "This is your full name ${{ secrets.DEPENDABOT_FIRST_NAME }} ${{ secrets.DEPENDABOT_LAST_NAME }}!!"
+        run: echo "This is your full name ${{ secrets.FIRST_NAME }} ${{ secrets.LAST_NAME }} !!"
