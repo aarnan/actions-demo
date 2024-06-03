@@ -7,6 +7,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Print Environment Variables
+        run: printenv | grep 'FIRST_NAME\|LAST_NAME'
+
       - name: my-step
         run: echo "Hello ${{ github.actor }}! :):) !"
 
